@@ -1,1 +1,7 @@
-<h1 class='container'> hello </h1>
+<%= form_for @account, url: { action: 'create' }, html: { class: 'account-form' } do |f| %>
+  <div class='form-group'>
+    <%= f.label(:bank_account_total, "Account Total:") %>
+    <%= f.text_field :bank_account_total %>
+    <%= f.submit 'create' %>
+  </div>
+<% end %>
