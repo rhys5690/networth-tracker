@@ -4,11 +4,7 @@ class AccountsController < ApplicationController
  end
 
  def create
-   @account = Account.new(account_params)
-   if @account.save
-     redirect_to new_account
-   else
-   end
+   @account = current_user.accounts.create(account_params)
  end
 
  private
