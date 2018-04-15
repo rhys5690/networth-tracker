@@ -16,10 +16,13 @@ class AccountsController < ApplicationController
  end
 
  def show
-   @account_1_total = Account.where(user_id: current_user.id).first.account_1_total
-   @account_2_total = Account.where(user_id: current_user.id).first.account_2_total
-   @bank_account_total = @account_1_total + @account_2_total
-
+   if Account.where(user_id: current_user.id).first
+     @account_1_total = Account.where(user_id: current_user.id).first.account_1_total
+     @account_2_total = Account.where(user_id: current_user.id).first.account_2_total
+     @bank_account_total = @account_1_total + @account_2_total
+   else
+     redirect_to new_account_path
+   end
  end
 
  private
