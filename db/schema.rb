@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180413021901) do
+ActiveRecord::Schema.define(version: 20180414014411) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "bank_account_total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.integer "account_1_total"
+    t.integer "account_2_total"
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
