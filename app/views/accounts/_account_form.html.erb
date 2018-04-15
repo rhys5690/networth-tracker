@@ -1,4 +1,4 @@
-<%= form_for @account, url: { action: 'create' }, html: { class: 'account-form' } do |f| %>
+<%= form_for @account, html: { class: 'account-form' } do |f| %>
   <div class='form-group'>
     <%= f.label(:account_1_total, "Account 1 Total:") %>
     <%= f.text_field :account_1_total %>
@@ -6,6 +6,6 @@
     <%= f.label(:account_2_total, "Account 2 Total:") %>
     <%= f.text_field :account_2_total %>
   </div>
-    <%= f.submit 'create' %>
+    <%= f.submit 'save' %>
   </div>
 <% end %>

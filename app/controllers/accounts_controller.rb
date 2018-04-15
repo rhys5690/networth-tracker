@@ -11,6 +11,15 @@ class AccountsController < ApplicationController
    @account = Account.where(id: params[:id]).first
  end
 
+ def update
+   @account = Account.where(id: params[:id]).first
+   if @account.update_attributes(account_params)
+    redirect_to root_path
+   else
+    # render the edit form again
+   end
+ end
+
  def create
    @account = current_user.accounts.create(account_params)
    if @account.save
