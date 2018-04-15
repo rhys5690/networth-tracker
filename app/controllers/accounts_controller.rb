@@ -7,6 +7,10 @@ class AccountsController < ApplicationController
    end
  end
 
+ def edit
+   @account = Account.where(id: params[:id]).first
+ end
+
  def create
    @account = current_user.accounts.create(account_params)
    if @account.save
@@ -17,8 +21,9 @@ class AccountsController < ApplicationController
 
  def show
    if Account.where(user_id: current_user.id).first
-     @account_1_total = Account.where(user_id: current_user.id).first.account_1_total
-     @account_2_total = Account.where(user_id: current_user.id).first.account_2_total
+     @account = Account.where(user_id: current_user.id).first
+     @account_1_total = @account.account_1_total
+     @account_2_total = @account.account_2_total
      @bank_account_total = @account_1_total + @account_2_total
    else
      redirect_to new_account_path

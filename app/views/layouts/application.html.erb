@@ -17,8 +17,10 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span></a>
+            <% if user_signed_in? %>
+              <%= link_to('Profile', edit_account_path(@account), class: 'nav-link') %>
+              <span class="sr-only">(current)</span>
+            <% end %>
           </li>
         </ul>
         <span class="navbar-text">
@@ -26,7 +28,7 @@
             <% if user_signed_in? %>
               <li class="nav-item active">
                 <a class="nav-link" href="/">
-                <%= current_user.email %>
+                  <%= current_user.email %>
                 </a>
               </li>
               <li class="nav-item active">
