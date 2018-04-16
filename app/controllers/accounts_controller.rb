@@ -1,8 +1,10 @@
 class AccountsController < ApplicationController
  def new
    if Account.where(user_id: current_user.id).first
+     @account_exists = true
      redirect_to root_path
    else
+     @account_exists = false
      @account = Account.new
    end
  end
@@ -33,7 +35,7 @@ class AccountsController < ApplicationController
      @account = Account.where(user_id: current_user.id).first
      @account_1_total = @account.account_1_total
      @account_2_total = @account.account_2_total
-     @bank_account_total = @account_1_total + @account_2_total
+     @networth_total = @account_1_total + @account_2_total
    else
      redirect_to new_account_path
    end
