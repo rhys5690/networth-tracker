@@ -4,14 +4,20 @@
   align-items: center;
 }
 
-.show_summary-table {
+.show_row {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  border: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+
+  &:last-child {
+    border-bottom: 1px solid black;
+  }
 }
 
-.show_summary-table_column {
+.show_row_column {
   flex-grow: 1;
   display: flex;
   justify-content: center;
@@ -22,6 +28,8 @@
   }
 }
 
-.show_summary-table_column_title {
+.show_row_column_row {}
+
+.show_row_column_title {
   margin: 0;
 }
