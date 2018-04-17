@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.show_networth-total {
+  margin-bottom: 20px;
+}
+
 .show_row {
   display: flex;
   justify-content: space-around;
@@ -18,7 +22,7 @@
 }
 
 .show_row_column {
-  flex-grow: 1;
+  flex-basis: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,8 +31,6 @@
     border-right: 1px solid black;
   }
 }
-
-.show_row_column_row {}
 
 .show_row_column_title {
   margin: 0;
