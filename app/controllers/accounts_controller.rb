@@ -36,6 +36,7 @@ class AccountsController < ApplicationController
      @account_1_total = @account.account_1_total
      @account_2_total = @account.account_2_total
      @networth_total = @account_1_total + @account_2_total
+     response = HTTParty.get('http://api.stackexchange.com/2.2/questions?site=stackoverflow')
    else
      redirect_to new_account_path
    end
