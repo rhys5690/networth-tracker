@@ -35,8 +35,8 @@ class AccountsController < ApplicationController
      @account = Account.where(user_id: current_user.id).first
      @account_1_total = @account.account_1_total
      @account_2_total = @account.account_2_total
+     @stock_price = @account.get_stock_data
      @networth_total = @account_1_total + @account_2_total
-     response = HTTParty.get('http://api.stackexchange.com/2.2/questions?site=stackoverflow')
    else
      redirect_to new_account_path
    end
