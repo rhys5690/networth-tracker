@@ -35,7 +35,7 @@ class AccountsController < ApplicationController
      @account = Account.where(user_id: current_user.id).first
      @account_1_total = @account.account_1_total
      @account_2_total = @account.account_2_total
-     @stock_price = @account.get_stock_data
+     @stock_price = (@account.get_stock_data.to_f * 4000).to_s
      @networth_total = @account_1_total + @account_2_total
    else
      redirect_to new_account_path
