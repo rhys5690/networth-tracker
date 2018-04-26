@@ -1,11 +1,28 @@
 <%= form_for @account, html: { class: 'account-form' } do |f| %>
-  <div class='form-group'>
-    <%= f.label(:account_1_total, "Account 1 Total:") %>
-    <%= f.text_field :account_1_total %>
+<h1>
+  Bank Accounts
+</h1>
+<div class='form-group'>
+  <%= f.label(:account_1_total, "Account 1 Total:") %>
+  <%= f.text_field :account_1_total %>
   <div class='form-group'>
     <%= f.label(:account_2_total, "Account 2 Total:") %>
     <%= f.text_field :account_2_total %>
   </div>
+  <h1>Stock</h1>
+  <div class='form-group' data-controller='autocomplete'>
+    <%= f.label(:stock_name, "Stock Name:") %>
+    <%= f.text_field :stock_name, :data => { :target => "autocomplete.input", :action => "keyup->autocomplete#autosuggest" } %>
+    <ul class="hidden" data-action="click->autocomplete#select" data-target="autocomplete.suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </div>
+  <div class='form-group'>
+    <%= f.label(:date_purchased, "Date Purchased:") %>
+    <%= f.text_field :date_purchased %>
+  </div>
+  <div class='form-group'>
     <%= f.submit 'save' %>
   </div>
 <% end %>
