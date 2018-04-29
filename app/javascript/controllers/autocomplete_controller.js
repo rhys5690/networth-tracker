@@ -1,13 +1,26 @@
-import { Controller } from "stimulus"
+import { Controller } from "stimulus";
+
+const END_POINT = 'https://sandbox.tradier.com/v1/markets/search?q=google';
 
 export default class extends Controller {
-  static targets = [ "name" ]
+  static targets = [ "input" ];
 
-  autosuggest() {
-    console.log(`lets make some magic!!`);
+  connect() {
+    this.stockNames = [];
+    fetch(END_POINT)
+      .then(response => {
+        return response.json();
+      })
+      .then(s => {
+        debugger;
+      });
   }
 
-  get name() {
-    return this.nameTarget.value
+  autosuggest() {
+    console.log(this.inputValue);
+  }
+
+  get inputValue() {
+    return this.inputTarget.value;
   }
 }
