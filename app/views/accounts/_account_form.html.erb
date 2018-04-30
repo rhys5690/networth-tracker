@@ -11,7 +11,7 @@
   </div>
   <h1>Stock</h1>
   <div class='form-group' data-controller='autocomplete'>
-    <%= f.label(:stock_name, "Stock Name:") %>
+    <%= f.label(:stock_name, "Stock Symbol:") %>
     <%= f.text_field :stock_name, :data => { :target => "autocomplete.input", :action => "keyup->autocomplete#autosuggest" } %>
     <ul class="hidden" data-action="click->autocomplete#select" data-target="autocomplete.suggestions">
       <li>Filter for a city</li>

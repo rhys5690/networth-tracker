@@ -35,7 +35,7 @@ class AccountsController < ApplicationController
      @account = Account.where(user_id: current_user.id).first
      @account_1_total = @account.account_1_total
      @account_2_total = @account.account_2_total
-     @stock_price = (@account.get_stock_data.to_f * 4000).to_s
+     @stock_price = @account.get_stock_data.to_s
      @networth_total = @account_1_total + @account_2_total
      @account_exists = true
    else
@@ -46,6 +46,6 @@ class AccountsController < ApplicationController
  private
 
   def account_params
-    params.require(:account).permit(:account_1_total, :account_2_total)
+    params.require(:account).permit(:account_1_total, :account_2_total, :stock_name)
   end
 end
