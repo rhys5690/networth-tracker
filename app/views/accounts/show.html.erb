@@ -3,7 +3,7 @@
     Networth Total:
   </p>
   <h1 class="show_networth-total">
-    $<%= @networth_total %>
+    $<%= number_with_precision(@networth_total, :precision => 2, :delimiter => ',') %>
   </h1>
 
   <div class="show_row">

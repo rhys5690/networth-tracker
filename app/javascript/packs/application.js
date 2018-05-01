@@ -10,7 +10,11 @@
 
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
+import Pikaday from 'pikaday'
 
 const application = Application.start()
 const context = require.context("controllers", true, /.js$/)
 application.load(definitionsFromContext(context))
+
+var picker = new Pikaday({ field: document.getElementById('datepicker') });
+console.log(picker);
