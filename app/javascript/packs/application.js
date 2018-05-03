@@ -10,11 +10,20 @@
 
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
+import moment from 'moment'
 import Pikaday from 'pikaday'
 
 const application = Application.start()
 const context = require.context("controllers", true, /.js$/)
 application.load(definitionsFromContext(context))
 
-var picker = new Pikaday({ field: document.getElementById('datepicker') });
-console.log(picker);
+document.addEventListener("DOMContentLoaded", function() {
+  var picker = new Pikaday(
+  {
+      field: document.getElementById('datepicker'),
+      firstDay: 1,
+      minDate: new Date(),
+      maxDate: new Date(2020, 12, 31),
+      yearRange: [2000,2020]
+  });
+});
