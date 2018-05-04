@@ -7,23 +7,18 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+import { Application } from 'stimulus';
+import { definitionsFromContext } from 'stimulus/webpack-helpers';
+import moment from 'moment';
+import Pikaday from 'pikaday';
 
-import { Application } from "stimulus"
-import { definitionsFromContext } from "stimulus/webpack-helpers"
-import moment from 'moment'
-import Pikaday from 'pikaday'
+const application = Application.start();
+const context = require.context('controllers', true, /.js$/);
+application.load(definitionsFromContext(context));
 
-const application = Application.start()
-const context = require.context("controllers", true, /.js$/)
-application.load(definitionsFromContext(context))
-
-document.addEventListener("DOMContentLoaded", function() {
-  var picker = new Pikaday(
-  {
-      field: document.getElementById('datepicker'),
-      firstDay: 1,
-      minDate: new Date(),
-      maxDate: new Date(2020, 12, 31),
-      yearRange: [2000,2020]
+document.addEventListener('DOMContentLoaded', function() {
+  var picker = new Pikaday({
+    field: document.getElementById('datepicker'),
+    reposition: false
   });
 });
