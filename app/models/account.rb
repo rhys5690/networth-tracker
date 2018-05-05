@@ -1,5 +1,6 @@
 class Account < ApplicationRecord
   belongs_to :user
+  has_many :stock
   validates :account_1_total, presence: true
 
   def get_stock_data
