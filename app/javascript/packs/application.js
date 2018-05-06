@@ -16,7 +16,7 @@ const application = Application.start();
 const context = require.context('controllers', true, /.js$/);
 application.load(definitionsFromContext(context));
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('turbolinks:load', function() {
   var picker = new Pikaday({
     field: document.getElementById('datepicker'),
     reposition: false

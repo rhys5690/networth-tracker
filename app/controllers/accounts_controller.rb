@@ -46,6 +46,6 @@ class AccountsController < ApplicationController
  private
 
   def account_params
-    params.require(:account).permit(:account_1_total, :account_2_total, :stock_name)
+    params.require(:account).permit(:account_1_total, :account_2_total, stocks_attributes: [:stock_symbol, :date_purchased, :amount_purchased])
   end
 end

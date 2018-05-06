@@ -1,6 +1,7 @@
 class Account < ApplicationRecord
   belongs_to :user
-  has_many :stock
+  has_many :stocks
+  accepts_nested_attributes_for :stocks
   validates :account_1_total, presence: true
 
   def get_stock_data

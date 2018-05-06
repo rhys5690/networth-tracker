@@ -10,17 +10,25 @@
     <%= f.text_field :account_2_total %>
   </div>
   <h1>Stock</h1>
-  <div class='form-group' data-controller='autocomplete'>
-    <%= f.label(:stock_name, "Stock Symbol:") %>
-    <%= f.text_field :stock_name, :data => { :target => "autocomplete.input", :action => "keyup->autocomplete#autosuggest" } %>
-    <ul class="hidden" data-action="click->autocomplete#select" data-target="autocomplete.suggestions">
-      <li>Filter for a city</li>
-      <li>or a state</li>
-    </ul>
-  </div>
+  <%= f.fields_for :stock do |stock_form| %>
+    <div class='form-group' data-controller='autocomplete'>
+      <%= stock_form.label(:stock_symbol, "Stock Symbol:") %>
+      <%= stock_form.text_field :stock_symbol, :data => { :target => "autocomplete.input", :action => "keyup->autocomplete#autosuggest" } %>
+      <ul class="hidden" data-action="click->autocomplete#select" data-target="autocomplete.suggestions">
+        <li>Filter for a city</li>
+        <li>or a state</li>
+      </ul>
+    </div>
+    <div class='form-group'>
+      <%= stock_form.label(:amount_purchased, "Amount purchased:") %>
+      <%= stock_form.text_field :amount_purchased %>
+    </div>
+    <div class='form-group'>
+      <%= stock_form.label(:date_purchased, "Date Purchased:") %>
+      <%= stock_form.text_field :date_purchased, id: "datepicker" %>
+    </div>
+  <% end %>
   <div class='form-group'>
-    <%= f.label(:date_purchased, "Date Purchased:") %>
-    <%= f.text_field :date_purchased, id: "datepicker" %>
+    <%= f.submit 'save' %>
   </div>
-
 <% end %>
