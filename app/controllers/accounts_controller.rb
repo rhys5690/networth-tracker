@@ -11,6 +11,7 @@ class AccountsController < ApplicationController
 
  def edit
    @account = Account.where(id: params[:id]).first
+   1.times { @account.stocks.build }
  end
 
  def update
