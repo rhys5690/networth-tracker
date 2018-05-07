@@ -1,6 +1,5 @@
 class StocksController < ApplicationController
   def create
-    @stock = @account = current_user.accounts.create(account_params).stocks
   end
 
   private

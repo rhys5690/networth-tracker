@@ -15,6 +15,7 @@ class AccountsController < ApplicationController
 
  def update
    @account = Account.where(id: params[:id]).first
+   byebug
    if @account.update_attributes(account_params)
     redirect_to root_path
    else

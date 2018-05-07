@@ -10,14 +10,10 @@
     <%= f.text_field :account_2_total %>
   </div>
   <h1>Stock</h1>
-  <%= f.fields_for :stock do |stock_form| %>
-    <div class='form-group' data-controller='autocomplete'>
+  <%= f.fields_for :stocks do |stock_form| %>
+    <div class='form-group'>
       <%= stock_form.label(:stock_symbol, "Stock Symbol:") %>
-      <%= stock_form.text_field :stock_symbol, :data => { :target => "autocomplete.input", :action => "keyup->autocomplete#autosuggest" } %>
-      <ul class="hidden" data-action="click->autocomplete#select" data-target="autocomplete.suggestions">
-        <li>Filter for a city</li>
-        <li>or a state</li>
-      </ul>
+      <%= stock_form.text_field :stock_symbol %>
     </div>
     <div class='form-group'>
       <%= stock_form.label(:amount_purchased, "Amount purchased:") %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180505001151) do
+ActiveRecord::Schema.define(version: 20180507220947) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "bank_account_total"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20180505001151) do
     t.integer "amount_purchased"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "account_id"
+    t.index ["account_id"], name: "index_stocks_on_account_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -56,4 +58,5 @@ ActiveRecord::Schema.define(version: 20180505001151) do
   end
 
   add_foreign_key "accounts", "users"
+  add_foreign_key "stocks", "accounts"
 end
