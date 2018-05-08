@@ -6,17 +6,17 @@ class AccountsController < ApplicationController
    else
      @account_exists = false
      @account = Account.new
+     @account.stocks.build
    end
  end
 
  def edit
    @account = Account.where(id: params[:id]).first
-   1.times { @account.stocks.build }
+   @account.stocks.build
  end
 
  def update
    @account = Account.where(id: params[:id]).first
-   byebug
    if @account.update_attributes(account_params)
     redirect_to root_path
    else
@@ -38,7 +38,8 @@ class AccountsController < ApplicationController
      @account_1_total = @account.account_1_total
      @account_2_total = @account.account_2_total
      @stock_price = @account.get_stock_data.to_s
-     @networth_total = @account_1_total + @account_2_total
+     @stock_value = @stock_price.to_f * @account.stocks.first.amount_purchased
+     @networth_total = @account_1_total + @account_2_total + @stock_value
      @account_exists = true
    else
      redirect_to new_account_path
