@@ -12,7 +12,6 @@ class AccountsController < ApplicationController
 
  def edit
    @account = Account.where(id: params[:id]).first
-   @account.stocks.build
  end
 
  def update
