@@ -1,11 +1,13 @@
-
-
 @import "bootstrap";
-@import "accounts";
 @import "accounts/show";
 @import "datepicker";
+@import "devise/registrations/new";
 
 p {
+  text-align: center;
+}
+
+h2 {
   text-align: center;
 }
 
