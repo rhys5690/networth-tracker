@@ -1,30 +1,34 @@
-<%= form_for @account, html: { class: 'account-form' } do |f| %>
-<h1>
-  Bank Accounts
-</h1>
-<div class='form-group'>
-  <%= f.label(:account_1_total, "Account 1 Total:") %>
-  <%= f.text_field :account_1_total %>
-  <div class='form-group'>
-    <%= f.label(:account_2_total, "Account 2 Total:") %>
-    <%= f.text_field :account_2_total %>
-  </div>
-  <h1>Stock</h1>
-  <%= f.fields_for :stocks do |stock_form| %>
-    <div class='form-group'>
-      <%= stock_form.label(:stock_symbol, "Stock Symbol:") %>
-      <%= stock_form.text_field :stock_symbol %>
-    </div>
-    <div class='form-group'>
-      <%= stock_form.label(:amount_purchased, "Amount purchased:") %>
-      <%= stock_form.text_field :amount_purchased %>
-    </div>
-    <div class='form-group'>
-      <%= stock_form.label(:date_purchased, "Date Purchased:") %>
-      <%= stock_form.text_field :date_purchased, id: "datepicker" %>
+<div class='account-form'>
+  <div class='account-form__form-wrapper'>
+    <h1 class='account-form__form-wrapper__form__title-text'>
+      Bank Accounts
+    </h1>
+    <%= form_for @account, html: {class: "account-form__form-wrapper__form"} do |f| %>
+    <div class='account-form__form-wrapper__form__input-wrapper'>
+      <%= f.label(:account_1_total, "Account 1 Total:") %>
+      <%= f.text_field :account_1_total, class: 'account-form__form-wrapper__form__input-wrapper__input' %>
+      <div class='account-form__form-wrapper__form__input-wrapper'>
+        <%= f.label(:account_2_total, "Account 2 Total:") %>
+        <%= f.text_field :account_2_total, class: 'account-form__form-wrapper__form__input-wrapper__input' %>
+      </div>
+      <h1 class='account-form__form-wrapper__form__title-text'>Stock</h1>
+      <%= f.fields_for :stocks do |stock_form| %>
+      <div class='account-form__form-wrapper__form__input-wrapper'>
+        <%= stock_form.label(:stock_symbol, "Stock Symbol:") %>
+        <%= stock_form.text_field :stock_symbol, class: 'account-form__form-wrapper__form__input-wrapper__input' %>
+      </div>
+      <div class='account-form__form-wrapper__form__input-wrapper'>
+        <%= stock_form.label(:amount_purchased, "Amount purchased:") %>
+        <%= stock_form.text_field :amount_purchased, class: 'account-form__form-wrapper__form__input-wrapper__input' %>
+      </div>
+      <div class='account-form__form-wrapper__form__input-wrapper'>
+        <%= stock_form.label(:date_purchased, "Date Purchased:") %>
+        <%= stock_form.text_field :date_purchased, id: "datepicker", class: 'account-form__form-wrapper__form__input-wrapper__input' %>
+      </div>
+    <% end %>
+    <div class='account-form__form-wrapper__form__input-wrapper'>
+      <%= f.submit 'save', class: 'btn btn-primary account-form__form-wrapper__form__button' %>
     </div>
   <% end %>
-  <div class='form-group'>
-    <%= f.submit 'save' %>
-  </div>
-<% end %>
+</div>
+</div>
