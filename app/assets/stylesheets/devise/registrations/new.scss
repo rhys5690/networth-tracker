@@ -1,8 +1,8 @@
-.log-in {
-  height: 80vh;
+.sign-up {
+  height: calc(100vh - 76px);
 }
 
-.log-in__form-wrapper {
+.sign-up__form-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,10 +10,14 @@
   height: 100%;
 }
 
-.log-in__form-wrapper__form, .log-in__form-wrapper__form__input-wrapper__input, .log-in__form-wrapper__form__button {
+.sign-up__form-wrapper__form, .sign-up__form-wrapper__form__input-wrapper__input, .sign-up__form-wrapper__form__button {
   width: 100%;
 }
 
-.log-in__form-wrapper__form__input-wrapper {
+.sign-up__form-wrapper__form__input-wrapper {
   margin-bottom: 1rem;
+}
+
+.sign-up__form-wrapper__form__input-wrapper__input {
+  border: 1px solid #212529;
 }
