@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: sign-in-starter_development
+  database: networth-tracker_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: sign-in-starter_test
+  database: networth-tracker_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: sign-in-starter_production
-  username: sign-in-starter
-  password: <%= ENV['SIGN-IN-STARTER_DATABASE_PASSWORD'] %>
+  database: networth-tracker_production
+  username: networth-tracker
+  password: <%= ENV['NETWORTH-TRACKER_DATABASE_PASSWORD'] %>
