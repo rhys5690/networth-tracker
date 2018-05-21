@@ -50,5 +50,3 @@ test:
 production:
   <<: *default
   database: networth-tracker_production
-  username: networth-tracker
-  password: <%= ENV['NETWORTH-TRACKER_DATABASE_PASSWORD'] %>
