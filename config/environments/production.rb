@@ -91,4 +91,5 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.DATABASE_URL = 'mysql://b5f5f4764c4192:4e02674c@us-cdbr-iron-east-04.cleardb.net/heroku_03a85c4fd2300db?reconnect=true'
 end
