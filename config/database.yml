@@ -50,4 +50,4 @@ test:
 production:
   <<: *default
   database: networth-tracker_production
-  url: <%= ENV['DATABASE_URL'] %>
+  url: 'www.google.com'
