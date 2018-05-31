@@ -1,7 +1,7 @@
 <div class='log-in'>
   <div class='log-in__form-wrapper'>
     <h2>Log in</h2>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "log-in__form-wrapper__form"}) do |f| %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), remote: true, html: {class: "log-in__form-wrapper__form"}) do |f| %>
       <div class='log-in__form-wrapper__form__input-wrapper'>
         <%= f.label :email %><br/>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'log-in__form-wrapper__form__input-wrapper__input' %>
