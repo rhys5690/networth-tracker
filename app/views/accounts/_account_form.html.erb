@@ -3,7 +3,7 @@
     <h1 class='account-form__form-wrapper__form__title-text'>
       Bank Accounts
     </h1>
-    <%= form_for @account, html: {class: "account-form__form-wrapper__form"} do |f| %>
+    <%= form_for @account, remote: true, html: {class: "account-form__form-wrapper__form"} do |f| %>
     <div class='account-form__form-wrapper__form__input-wrapper'>
       <%= f.label(:account_1_total, "Account 1 Total:") %>
       <%= f.text_field :account_1_total, class: 'account-form__form-wrapper__form__input-wrapper__input' %>
