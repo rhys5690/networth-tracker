@@ -5,45 +5,4 @@
   <h1 class="show_networth-total">
     $<%= number_with_precision(@networth_total, :precision => 2, :delimiter => ',') %>
   </h1>
-
-  <div class="show_row">
-    <div class="show_row_column">
-      <p class="show_row_column_title"><strong>Month</strong></p>
-    </div>
-    <div class="show_row_column">
-      <p class="show_row_column_title"><strong>Account 1 Total</strong></p>
-    </div>
-    <div class="show_row_column">
-      <p class="show_row_column_title"><strong>Account 2 Total</strong></p>
-    </div>
-    <div class="show_row_column">
-      <p class="show_row_column_title"><strong>Stock</strong></p>
-    </div>
-    <div class="show_row_column">
-      <p class="show_row_column_title"><strong>Net Savings</strong></p>
-    </div>
-    <div class="show_row_column">
-      <p class="show_row_column_title"><strong>Net Assets</strong></p>
-    </div>
-  </div>
-  <div class="show_row">
-    <div class="show_row_column">
-      <p class="show_row_column_title"><%= Date::MONTHNAMES[Date.today.month] %></p>
-    </div>
-    <div class="show_row_column">
-      <p class="show_row_column_title">$<%= @account_1_total %></p>
-    </div>
-    <div class="show_row_column">
-      <p class="show_row_column_title">$<%= @account_2_total %></p>
-    </div>
-    <div class="show_row_column">
-      <p class="show_row_column_title">$<%= @stock_value %></p>
-    </div>
-    <div class="show_row_column">
-      <p class="show_row_column_title">$<%= @account_1_total + @account_2_total %></p>
-    </div>
-    <div class="show_row_column">
-      <p class="show_row_column_title">$<%= @networth_total %></p>
-    </div>
-  </div>
 </div>
