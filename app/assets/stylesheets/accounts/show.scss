@@ -7,31 +7,3 @@
 .show_networth-total {
   margin-bottom: 20px;
 }
-
-.show_row {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  border-top: 1px solid black;
-
-  &:last-child {
-    border-bottom: 1px solid black;
-  }
-}
-
-.show_row_column {
-  flex-basis: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &:not(:last-child) {
-    border-right: 1px solid black;
-  }
-}
-
-.show_row_column_title {
-  margin: 0;
-}
