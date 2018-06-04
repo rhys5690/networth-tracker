@@ -1,14 +1,14 @@
 // src/controllers/hello_controller.js
-import { Controller } from "stimulus"
+import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = [ "link" ]
+  static targets = [ "link" ];
 
   connect() {
-    console.log(`Hello!`)
+    console.log(`Hello!`);
   }
 
   signOut() {
-    console.log('yoo');
+    Turbolinks.visit('/')
   }
 }
