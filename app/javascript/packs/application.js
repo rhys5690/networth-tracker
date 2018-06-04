@@ -22,7 +22,8 @@ document.addEventListener('turbolinks:load', function() {
     reposition: false
   });
 
-  const signOut = document.getElementById('sign-out').addEventListener('click', () => {
+  const signOut = document.getElementById('sign-out').addEventListener('turbolinks:click', (e) => {
+    console.log(e.data.url);
     window.location.href = '/'
   });
   console.log(signOut);
