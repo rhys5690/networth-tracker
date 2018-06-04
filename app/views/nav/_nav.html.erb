@@ -20,9 +20,15 @@
               <%= current_user.email %>
             </a>
           </li>
-          <li class="nav-item active">
-            <%= link_to('Sign Out', destroy_user_session_path, turbolinks: true, method: :delete, class: "nav-link", id: 'sign-out') %>
+          <li class="nav-item active" data-controller='signOut'>
+            <a turbolinks="true" class="nav-link" id="signOut" data-remote="true" rel="nofollow" data-method="delete" data-action='click->signOut#signOut' data-target='signOut.link' href="/users/sign_out">Sign Out</a>
           </li>
+          <!-- <li class="nav-item active">
+            <%= link_to('Sign Out', destroy_user_session_path, remote: true, turbolinks: true, method: :delete, class: "nav-link", id: 'sign-out') %>
+          </li> -->
+          <!-- <li class="nav-item active" data-controller='sign_out'>
+            <%= link_to('Sign Out', destroy_user_session_path, remote: true, turbolinks: true, html: {data: {'action' => 'click->sign_out#signOut', method: :delete }}, class: "nav-link", id: 'sign-out') %>
+          </li> -->
         <% else %>
           <li class="nav-item active">
             <%= link_to('Sign In', new_user_session_path, class: 'nav-link') %>
