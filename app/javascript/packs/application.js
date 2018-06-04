@@ -21,4 +21,9 @@ document.addEventListener('turbolinks:load', function() {
     field: document.getElementById('datepicker'),
     reposition: false
   });
+
+  const signOut = document.getElementById('sign-out').addEventListener('click', () => {
+    window.location.href = '/'
+  });
+  console.log(signOut);
 });
