@@ -9,7 +9,6 @@ export default class extends Controller {
   }
 
   signOut() {
-    Turbolinks.visit('/')
-    Turbolinks.clearCache()
+    Turbolinks.visit('/');
   }
 }
