@@ -17,6 +17,7 @@ class AccountsController < ApplicationController
  def update
    @account = Account.where(id: params[:id]).first
    if @account.update_attributes(account_params)
+    # test
     redirect_to root_path
    else
     # render the edit form again
