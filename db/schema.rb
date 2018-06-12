@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180611204947) do
+ActiveRecord::Schema.define(version: 20180612205414) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "bank_account_total"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 20180611204947) do
     t.integer "account_2_total"
     t.string "stock_name"
     t.string "date_purchased"
+    t.integer "access_number"
+    t.integer "security_number"
+    t.string "internet_password"
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 

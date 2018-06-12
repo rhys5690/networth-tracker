@@ -35,11 +35,13 @@ class AccountsController < ApplicationController
  def show
    if Account.where(user_id: current_user.id).first
      @account = Account.where(user_id: current_user.id).first
-     @account_1_total = @account.account_1_total
-     @account_2_total = @account.account_2_total
-     @stock_price = @account.get_stock_data.to_s
-     @stock_value = @stock_price.to_f * @account.stocks.first.amount_purchased
-     @networth_total = @account_1_total + @account_2_total + @stock_value
+     doc = HTTParty.get("https://ibanking.stgeorge.com.au/ibank/loginPage.action")
+     @parse_page ||= Nokogiri::HTML(doc)
+     @access_number = @parse_page.css("#access-number")
+     @security_number = @parse_page.css("#securityNumber")
+     @internet_password = @parse_page.css("#internet-password")
+     @parse_page.css("#internet-password")[0].attributes["id"].value
+     @networth_total = 35000
      @account_exists = true
    else
      redirect_to new_account_path
@@ -49,6 +51,6 @@ class AccountsController < ApplicationController
  private
 
   def account_params
-    params.require(:account).permit(:account_1_total, :account_2_total, stocks_attributes: [:id, :stock_symbol, :date_purchased, :amount_purchased])
+    params.require(:account).permit(:access_number, :security_number, :internet_password)
   end
 end

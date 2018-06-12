@@ -2,7 +2,6 @@ class Account < ApplicationRecord
   belongs_to :user
   has_many :stocks, inverse_of: :account, dependent: :delete_all
   accepts_nested_attributes_for :stocks
-  validates :account_1_total, presence: true
 
   def get_stock_data
     @stock_name = stocks.first.stock_symbol.downcase
