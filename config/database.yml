@@ -49,11 +49,11 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-# production:
-#   <<: *default
-#   username: b5f5f4764c4192
-#   password: 4e02674c
-#   host: us-cdbr-iron-east-04.cleardb.net
-#   database: heroku_03a85c4fd2300db
+production:
+  <<: *default
+  username: b5f5f4764c4192
+  password: 4e02674c
+  host: us-cdbr-iron-east-04.cleardb.net
+  database: heroku_03a85c4fd2300db
 
 
