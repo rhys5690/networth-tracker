@@ -31,6 +31,7 @@ gem 'devise'
 gem 'httparty'
 gem 'webpacker'
 gem "pikaday-gem"
+gem 'mechanize'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
