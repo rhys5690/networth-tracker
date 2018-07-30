@@ -6,7 +6,9 @@ To start, run:
 ```
 bundle install
 ```
-and
+```
+yarn install
+```
 ```
 rails s
 ```
